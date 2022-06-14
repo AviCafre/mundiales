@@ -1,22 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/navbar/Navbar';
+import Counter from './components/itemcount/Itemcount';
+import Home from './components/home/Homeindex';
 
-function App() {
+
+const App=()=> {
+  const initial=0;
+    const stock=15;
+    const onAdd = () => {console.log ('agregado')};
+
+
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       <NavBar/>
+       <h1>Mundial de Camisetas</h1>
+       <Counter  onAdd={onAdd} initial={initial} stock={stock}/>
+       <Home/>
       </header>
     </div>
   );
